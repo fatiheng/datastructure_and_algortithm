@@ -50,6 +50,7 @@ public class FilmArray {
 
         filmArray[size] = film;
         size++;
+
     }
 
     public void insert(int index, Film film) {

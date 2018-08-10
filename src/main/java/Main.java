@@ -12,6 +12,7 @@ public class Main {
         //item of array prints ...
         for (int i = 0; i < arrayInt.length; i++) {
             System.out.println(arrayInt[i]);
+
         }
     }
 }

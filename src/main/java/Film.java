@@ -12,7 +12,7 @@ public class Film {
     }
 
     public Film(String title, int yapimTarihi, String turu) {
-        this.title = title;
+        this.title = title ;
         this.yapimTarihi = yapimTarihi;
         this.turu = turu;
     }
