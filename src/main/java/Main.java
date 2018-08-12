@@ -2,20 +2,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //array iniitializing ...
-        char[] arrayInt = new char[2];
+        //array initializing ...
+        char[] charArray = new char[2];
 
-        //set [0].index of array...
-        arrayInt[0] = 'A';
+        //set [0] => index of array...
+        charArray[0] = 'A';
 
-        //set [1].index of array...
-        arrayInt[1] = 'B';
+        //set [1] => index of array...
+        charArray[1] = 'B';
+
+        //get of charArray firstCharElement
+        char firstCharElement = charArray[0];
+        System.out.println("first char element of charArray is :" + firstCharElement);
+
+        //get of charArray secondCharElement
+        char secondCharElement = charArray[1];
+        System.out.println("first char element of charArray is :" + secondCharElement);
 
 
-        //item of array prints ...
-        for (int i = 0; i < arrayInt.length; i++) {
-            System.out.println(arrayInt[i]);
 
-        }
+
     }
 }
