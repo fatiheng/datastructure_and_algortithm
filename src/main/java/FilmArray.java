@@ -32,15 +32,6 @@ public class FilmArray {
         filmArray = new Film[initialCapacity];
     }
 
-    public Film get(int index) {
-        return (Film)filmArray[index];
-    }
-
-    public void set(int index, Film film) {
-        filmArray[index] = film;
-    }
-
-
     // Which is like insert, only in does the insert at the end of the array.
     public void add(Film film) {
 
@@ -51,6 +42,38 @@ public class FilmArray {
         filmArray[size] = film;
         size++;
 
+    }
+
+    //resize the list length. it doubles the length of the list.
+    private void resize() {
+
+        //doubles the size of filmArray
+        Film[] newFilmArray = new Film[initialCapacity * 2];
+
+        //move from items of filmArray to newFilmArray
+        for (int i = 0; i < initialCapacity; i++) {
+            newFilmArray[i] = filmArray[i];
+        }
+
+        //assigment newFilmArray to filmArray
+        filmArray = newFilmArray;
+
+        this.initialCapacity = initialCapacity * 2;
+    }
+
+    //get number of elements it contains
+    public int size() {
+        return this.size;
+    }
+
+
+
+    public Film get(int index) {
+        return (Film)filmArray[index];
+    }
+
+    public void set(int index, Film film) {
+        filmArray[index] = film;
     }
 
     public void insert(int index, Film film) {
@@ -70,10 +93,8 @@ public class FilmArray {
         size++;
     }
 
-    //get number of elements it contains
-    public int size() {
-        return this.size;
-    }
+
+
 
     public void delete(String filmTitle) {
         //find index number of Film ,searching by filmTitle
@@ -110,22 +131,6 @@ public class FilmArray {
 
         }
     }
-
-
-    //resize the list length. it doubles the length of the list.
-    private void resize() {
-        Film[] newFilmArray = new Film[initialCapacity * 2];
-        for (int i = 0; i < initialCapacity; i++) {
-            newFilmArray[i] = filmArray[i];
-        }
-        filmArray = newFilmArray;
-        initialCapacity = initialCapacity * 2;
-    }
-
-
-
-
-
 
 
 }
