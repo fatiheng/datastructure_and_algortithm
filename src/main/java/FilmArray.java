@@ -66,14 +66,16 @@ public class FilmArray {
         return this.size;
     }
 
+    //whether the filmArray contains the film or not
+    public boolean contains(String  filmAdi) {
 
+        for (int i = 0; i < size - 1; i++) {
+            if(filmAdi.equals(filmArray[i].getTitle())) {
+                return true;
+            }
+        }
 
-    public Film get(int index) {
-        return (Film)filmArray[index];
-    }
-
-    public void set(int index, Film film) {
-        filmArray[index] = film;
+        return false;
     }
 
     public void insert(int index, Film film) {
@@ -93,33 +95,21 @@ public class FilmArray {
         size++;
     }
 
-
-
-
-    public void delete(String filmTitle) {
-        //find index number of Film ,searching by filmTitle
-        int index = findTheFilmIndex(filmTitle);
-        if(index != -1 ) {
-            for (int i = index; i < filmArray.length-1 ; i++) {
-                filmArray[i] = filmArray[i+1];
-                index++;
-            }
-
-            size--;  // decrement size
-        }else {
-            System.out.println("Can't find the film :" + filmTitle);
+    public void delete(int index) {
+        // Copy down
+        for (int j = index; j < size - 1; j++) {
+            filmArray[j] = filmArray[j + 1];
         }
-
+        size--;
     }
 
-    //linear searching algorithm
-    public int findTheFilmIndex(String filmTitle) {
-        for (int index = 0; index <= filmArray.length-1 ; index++) {
-            if(filmTitle.equals(filmArray[index].getTitle())) {
-                return index ; //if the film can find, it will return index number of filmArray
-            }
-        }
-        return -1; //if can't find the film , it will return -1
+
+    public Film get(int index) {
+        return (Film)filmArray[index];
+    }
+
+    public void set(int index, Film film) {
+        filmArray[index] = film;
     }
 
 
